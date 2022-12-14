@@ -124,6 +124,11 @@ struct v2d_generic {
                ((this->x == rhs.x) && (this->y > rhs.y));
     }
 
+    // for convenience
+    std::string ToString() {
+        return "(" + std::to_string( x ) + "," + std::to_string( y ) + ")";
+    }
+
     // casting - to enable mingling of different native templated types ================================
     // NOTE: inspired by JavidX9 PGE code (thanks :))
     operator v2d_generic<int      >() const { return { static_cast<int      >(this->x), static_cast<int      >(this->y) }; }
@@ -234,6 +239,11 @@ struct v3d_generic {
                                       ((this->y == rhs.y) && (this->z > rhs.z))));
     }
 
+    // for convenience
+    std::string ToString() {
+        return "(" + std::to_string( x ) + "," + std::to_string( y ) + "," + std::to_string( z ) + ")";
+    }
+
     // casting - to enable mingling of different native templated types ================================
     // NOTE: inspired by JavidX9 PGE code (thanks :))
     operator v3d_generic<int      >() const { return { static_cast<int      >(this->x), static_cast<int      >(this->y), static_cast<int      >(this->z) }; }
@@ -339,6 +349,11 @@ struct v2d_hom_generic {
                                       ((this->y == rhs.y) && (this->w > rhs.w))));
     }
 
+    // for convenience
+    std::string ToString() {
+        return "(" + std::to_string( x ) + "," + std::to_string( y ) + "," + std::to_string( w ) + ")";
+    }
+
     // casting - to enable mingling of different native templated types ================================
     // NOTE: inspired by JavidX9 PGE code (thanks :))
     operator v2d_hom_generic<int      >() const { return { static_cast<int      >(this->x), static_cast<int      >(this->y), static_cast<int      >(this->w) }; }
@@ -441,6 +456,11 @@ struct v3d_hom_generic {
                                                               ((this->z == rhs.z) && (this->w > rhs.w))))));
     }
 
+    // for convenience
+    std::string ToString() {
+        return "(" + std::to_string( x ) + "," + std::to_string( y ) + "," + std::to_string( z ) + "," + std::to_string( w ) + ")";
+    }
+
     // casting - to enable mingling of different native templated types ================================
     // NOTE: inspired by JavidX9 PGE code (thanks :))
     operator v3d_hom_generic<int      >() const { return { static_cast<int      >(this->x), static_cast<int      >(this->y), static_cast<int      >(this->z), static_cast<int      >(this->w) }; }
@@ -535,6 +555,11 @@ struct v2d_hom_textures {
         return ( this->u >  rhs.u) ||
                ((this->u == rhs.u) && (( this->v >  rhs.v) ||
                                        ((this->v == rhs.v) && (this->w > rhs.w))));
+    }
+
+    // for convenience
+    std::string ToString() {
+        return "(" + std::to_string( u ) + "," + std::to_string( v ) + "," + std::to_string( w ) + ")";
     }
 
     // casting - to enable mingling of different native templated types ================================
